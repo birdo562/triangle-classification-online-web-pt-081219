@@ -7,7 +7,10 @@ class Triangle
   end
   def kind
     triangle_check
-    
+    if side1==side2 && side2==side3
+      :equilateral
+    elsif
+    side1
   end
   
   def triangle_check
