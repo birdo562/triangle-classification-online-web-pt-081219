@@ -1,27 +1,29 @@
 class Triangle
-  attr_reader :side1, :side2, :side3
-  def initialize(side1, side2, side3)
-    @side1 = side1
-    @side2 = side2
-    @side3 = side3
+  attr_reader :a, :b, :c
+  def initialize(a, b, c)
+    @a = a
+    @b = b
+    @c = c
   end
+
   def kind
-    triangle_check
-    if side1==side2 && side2==side3
+    validate_triangle
+    if a == b && b == c
       :equilateral
-    elsif
-    side1==side2||side1==side3||side2==side3
-    :isosceles
-  else
-    :scalene
+    elsif a == b || b == c || a == c
+      :isosceles
+    else
+      :scalene
+    end
   end
-end
-  
-  def triangle_check
-    triangle = [(side1+side2>side3), (side1+side3>side2), (side2+side3>side1)]
-    [side1,side2,side3].each {|side| triangle << false if side <= 0}
-    raise TrangleError if triangle.include?(false)
+
+  def validate_triangle
+    real_triangle = [(a + b > c), (a + c > b), (b + c > a)]
+    [a, b, c].each { |s| real_triangle << false if s <= 0 }
+    raise TriangleError if real_triangle.include?(false)
   end
-class TrangleError < StandardError
-end
+
+  class TriangleError < StandardError
+  end
+
 end
