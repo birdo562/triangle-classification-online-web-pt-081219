@@ -22,7 +22,6 @@ end
     [side1,side2,side3].each {|side| triangle << false if side == 0}
     raise TrangleError if triangle.include(false)
   end
-end
 class TrangleError < StandardError
 end
 end
