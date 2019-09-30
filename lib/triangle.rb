@@ -20,7 +20,7 @@ end
   def triangle_check
     triangle = [(side1+side2>side3), (side1+side3>side2), (side2+side3>side1)]
     [side1,side2,side3].each {|side| triangle << false if side <= 0}
-    raise TrangleError if triangle.include(false)
+    raise TrangleError if triangle.include?(false)
   end
 class TrangleError < StandardError
 end
