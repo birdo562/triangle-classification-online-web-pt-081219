@@ -7,6 +7,7 @@ class Triangle
   end
   def kind
     triangle_check
+    
   end
   
   def triangle_check
@@ -14,6 +15,5 @@ class Triangle
     [side1,side2,side3].each {|side| triangle << false if side = 0}
     raise TrangleError if triangle.include(false)
   end
-end
 class TrangleError < StadardError
 end
