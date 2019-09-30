@@ -10,5 +10,5 @@ class Triangle
   end
   
   def triangle_check
-    triangle= [side1+]
+    triangle= [side1+side2>side3]
 end
