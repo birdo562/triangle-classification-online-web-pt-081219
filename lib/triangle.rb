@@ -22,4 +22,5 @@ class Triangle
     raise TrangleError if triangle.include(false)
   end
 class TrangleError < StadardError
+ end
 end
