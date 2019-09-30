@@ -18,8 +18,8 @@ class Triangle
   end
 
   def check_triangle
-    triangle = [(side1 + side2 > side3), (side1 + side3 > side2), (side2 + side3 > side1)]
-    [side1, side2, side3].each { |side| real_triangle << false if side <= 0 }
+    true_triangle = [(side1 + side2 > side3), (side1 + side3 > side2), (side2 + side3 > side1)]
+    [side1, side2, side3].each { |side| true_triangle << false if side <= 0 }
     raise TriangleError if triangle.include?(false)
   end
 
