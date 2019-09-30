@@ -22,3 +22,4 @@ class Triangle
     raise TrangleError if triangle.include(false)
   end
 end
+end
